@@ -7,7 +7,10 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'SpinaCMS Test',
-  plugins: [],
+  siteUrl: 'https://headless-spina-cms.netlify.com',
+  plugins: [
+    { use: '@gridsome/plugin-sitemap' },
+  ],
   css: {
     loaderOptions: {
       postcss: {
