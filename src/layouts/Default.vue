@@ -7,19 +7,13 @@
             <div class="flex items-center justify-between h-16 px-4 sm:px-0">
               <div class="flex items-center">
                 <div class="flex-shrink-0">
-                  <g-image class="h-8 w-8" src="~/workflow-mark-on-dark.svg" alt="" />
+                  <g-image
+                    class="h-8 w-8"
+                    src="~/workflow-mark-on-dark.svg"
+                    alt="Workflow Logo"
+                    immediate="true" />
                 </div>
-                <div class="hidden md:block">
-                  <div class="ml-10 flex items-baseline">
-                    <g-link
-                      v-for="page in pages"
-                      :key="page.id"
-                      :to="page.materialized_path"
-                      class="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
-                      {{ page.title }}
-                    </g-link>
-                  </div>
-                </div>
+                <NavbarLinks />
               </div>
               <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
@@ -100,18 +94,13 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import NavbarLinks from '~/components/NavbarLinks'
 
   export default {
     data() {
-      return { open: false, pages: '' }
+      return { open: false, }
     },
     props: ['title'],
-    async mounted() {
-      await axios
-        .get('https://spinacms-demo.herokuapp.com/api/pages')
-        .then(res => this.pages = res.data)
-        .catch(error => console.log(error))
-    }
+    components: { NavbarLinks }
   }
 </script>
