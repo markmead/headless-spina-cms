@@ -9,7 +9,7 @@
   "dependencies": {
     "@gridsome/plugin-sitemap": "^0.2.3",
     "@tailwindcss/ui": "^0.1.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "gridsome": "^0.7.0",
     "moment": "^2.24.0",
     "tailwindcss": "^1.2.0-canary.8"
